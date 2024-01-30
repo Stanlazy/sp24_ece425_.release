@@ -302,7 +302,7 @@ In the schematic window:
 ![nc_verilog](./docs/images/nc_verilog.png)
 
 - Click on the red button highlighted below.
-- Clock on the blue button highlighted below.
+- Click on the blue button highlighted below.
 
 ![run_nc_verilog](./docs/images/run_nc_verilog.png)
 
