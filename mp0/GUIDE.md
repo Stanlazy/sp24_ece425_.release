@@ -201,11 +201,12 @@ Remember, a buffer is just two inverters chained together.
 
 You have now finished the schematics of your first two cells!
 
-## Simulation
+## Simulation (Analog)
 
 This is where the fun begins.
 
 Before you layout your design, it is wise to run simulation on it to make sure it is correct.
+This section is the analog simulation of the circuit.
 
 - Open up the schematic view for the inverter again.
 - `Launch --> ADE Explorer`
@@ -289,6 +290,18 @@ When the simulation is complete, you should see a graph like this:
 
 ![inverter_graph](./docs/images/inverter_graph.png)
 
+## Simulation (Digital)
+
+This section is the digital simulation of the circuit.
+
+In the schematic window:
+
+- `Launch --> Plugins --> Simulation --> NC-Verilog`
+
+![nc_verilog](./docs/images/nc_verilog.png)
+
+
+
 ## Layouts
 
 This is where more fun begins.
@@ -369,6 +382,8 @@ Let's launch the DRC tool, and ask it to check our MOS for us.
 
 - `Calibre --> Run nmDRC`
 - In the runset selection window, input `/class/ece425/FreePDK45/ncsu_basekit/cdssetup/runset.calibre.drc`.
+
+![drc_runset](./docs/images/drc_runset.png)
 
 You should now see the following window:
 
