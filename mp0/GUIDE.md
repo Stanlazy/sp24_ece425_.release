@@ -13,7 +13,7 @@ In this MP, you will setup the environment that you will use for the duration of
 
 Virtuoso is the software that you will use throughout this semester.
 We primarily use it to draw the circuit diagram (schematic), and actually draw the gates (layout).
-In addition, you will launch simulation, DRC (design rule check) and LVS (layout verse schematic)
+In addition, you will launch simulation, DRC (design rule check) and LVS (layout versus schematic)
 from Virtuoso as well.
 
 Before starting Virtuoso, you need a few things:
