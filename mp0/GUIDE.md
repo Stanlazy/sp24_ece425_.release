@@ -317,7 +317,7 @@ spit out C files that behaves exactly like your Verilog, and compiles it to a ex
 We have provided the Makefile that contains everything about invoking VCS.
 We have also provided the template testbench file.
 
-- Copy the sim folder into the folder that NC-Verilog just generated,
+- Copy the sim (provided in this repository) folder into the folder that NC-Verilog just generated,
   in this case, into `inv_run1`.
 
 The folder structure should look like this:
@@ -364,7 +364,7 @@ $ make verdi
 To view a signal (red text in the code window), select the signal, and press `Ctrl+4` or `Ctrl-W`.
 You can use the mouse wheel to zoom in and out of the waveform window.
 
-
+![verdi](./docs/images/verdi.png)
 
 ## Layouts
 
