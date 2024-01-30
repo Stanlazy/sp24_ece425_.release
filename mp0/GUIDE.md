@@ -323,6 +323,7 @@ We have also provided the template testbench file.
 The folder structure should look like this:
   
 ```
+inv_run1
 ├── ihnl
 │   ├── cds0
 │   │   ├── control
