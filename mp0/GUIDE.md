@@ -201,11 +201,12 @@ Remember, a buffer is just two inverters chained together.
 
 You have now finished the schematics of your first two cells!
 
-## Simulation
+## Simulation (Analog)
 
 This is where the fun begins.
 
 Before you layout your design, it is wise to run simulation on it to make sure it is correct.
+This section is the analog simulation of the circuit.
 
 - Open up the schematic view for the inverter again.
 - `Launch --> ADE Explorer`
@@ -289,6 +290,83 @@ When the simulation is complete, you should see a graph like this:
 
 ![inverter_graph](./docs/images/inverter_graph.png)
 
+## Simulation (Digital)
+
+This section is the digital simulation of the circuit.
+
+First, we extract the netlist from the schematic window.
+In the schematic window:
+
+- `Launch --> Plugins --> Simulation --> NC-Verilog`
+
+![nc_verilog](./docs/images/nc_verilog.png)
+
+- Click on the red button highlighted below.
+- Click on the blue button highlighted below.
+
+![run_nc_verilog](./docs/images/run_nc_verilog.png)
+
+Now, the netlist is in `inv_run1/ihnl/cds*/netlist`. They are all Verilog files,
+and each symbol referenced in your schematic get its own folder, recursively.
+Also, your current schematic get one folder.
+
+We will use the simulator used in ECE411 to run the simulation.
+The simulator, Synopsys VCS, takes Verilog file,
+spit out C files that behaves exactly like your Verilog, and compiles it to a executable.
+
+We have provided the Makefile that contains everything about invoking VCS.
+We have also provided the template testbench file.
+
+- Copy the sim (provided in this repository) folder into the folder that NC-Verilog just generated,
+  in this case, into `inv_run1`.
+
+The folder structure should look like this:
+  
+```
+inv_run1
+├── ihnl
+│   ├── cds0
+│   │   ├── control
+│   │   ├── map
+│   │   ├── netlist
+│   │   ├── netlist.footer
+│   │   └── netlist.header
+│   └── ...
+├── sim
+│   ├── Makefile
+│   ├── mos.sv
+│   └── tb.sv
+└── ...
+```
+
+You should modify `sim/tb.sv` to include your test vector, as well as your dut (design under test) instantiation.
+Your dut module can be found here: `ihnl/cds0/netlist`.
+
+You can find the filled out example tb.sv in this repository.
+
+To run compile the simulation:
+
+```bash
+$ make sim/tb
+```
+
+To run the simulation:
+
+```bash
+$ make run
+```
+
+To view the waveform:
+
+```bash
+$ make verdi
+```
+
+To view a signal (red text in the code window), select the signal, and press `Ctrl+4` or `Ctrl-W`.
+You can use the mouse wheel to zoom in and out of the waveform window.
+
+![verdi](./docs/images/verdi.png)
+
 ## Layouts
 
 This is where more fun begins.
@@ -369,6 +447,8 @@ Let's launch the DRC tool, and ask it to check our MOS for us.
 
 - `Calibre --> Run nmDRC`
 - In the runset selection window, input `/class/ece425/FreePDK45/ncsu_basekit/cdssetup/runset.calibre.drc`.
+
+![drc_runset](./docs/images/drc_runset.png)
 
 You should now see the following window:
 
