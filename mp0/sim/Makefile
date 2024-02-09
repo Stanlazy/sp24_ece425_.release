@@ -10,8 +10,8 @@ VCS_FLAGS= -full64 -lca -sverilog +lint=all,noNS -timescale=1ns/1ns -debug_acc+a
 
 sim/tb: $(SRCS)
 	mkdir -p sim
-	sed -i -E 's/cds_globals.vss_//g' $(NET_SRC)
-	sed -i -E 's/cds_globals.vdd_//g' $(NET_SRC)
+	sed -i -E 's/cds_globals.vss_/1'"'"'b0/g' $(NET_SRC)
+	sed -i -E 's/cds_globals.vdd_/1'"'"'b1/g' $(NET_SRC)
 	cd sim && vcs $(SRCS) $(VCS_FLAGS) -l compile.log -top tb -o tb
 
 .PHONY: run

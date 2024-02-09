@@ -8,12 +8,11 @@ module NMOS_VTL(
     always_comb begin
         automatic logic wack;
         wack = B;
-        wack = S;
     end
 
     always_comb begin
         if (G) begin
-            D = 1'b0;
+            D = S;
         end else if (~G) begin
             D = 1'bz;
         end else begin
@@ -33,14 +32,13 @@ module PMOS_VTL(
     always_comb begin
         automatic logic wack;
         wack = B;
-        wack = S;
     end
 
     always_comb begin
         if (G) begin
             D = 1'bz;
         end else if (~G) begin
-            D = 1'b1;
+            D = S;
         end else begin
             D = 1'bx;
         end
