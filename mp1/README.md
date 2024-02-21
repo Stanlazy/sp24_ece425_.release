@@ -10,7 +10,7 @@ Your design should be in a new virtuoso library: `ece425mp1_<netid>`. Say for ex
 
 Your cell should be laid out so that they can be fitted in a row:
 - All cell should be of the same height.
-- nwell and pwell should be of the same height and extend to at least the same extent as power rails.
+- wells across cells should be of the same height and extend left and right to at least the same extent as power rails.
 - Both vdd and vss rail should be 200nm wide.
 - At least ceil((min_spacing_between_metal_2) / 2) amount of white space
   on left and right side of the cell on metal 1 and 2 excluding power rail.
@@ -107,8 +107,8 @@ For your NAND2 cell, using analog simulation, find out:
   - Only B rises while A stays 1
 - Rise time for your cell when:
   - Both A and B fall from 1 to 0
-  - Only A falls while B stays 0
-  - Only B falls while A stays 0
+  - Only A falls while B stays 1
+  - Only B falls while A stays 1
 
 Use 5ps as the rise and fall time for both input. Use 1V as VDD.
 

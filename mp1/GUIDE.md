@@ -37,7 +37,7 @@ transistors with one line without lifting your pen. Here is a example:
 
 ![merge](./docs/images/merge.png)
 
-Then you use other method to connect the reset of the connection.
+Then you use other method to connect the rest of the connection.
 
 When there are multiple possible way to trace, try to find the better one.
 
