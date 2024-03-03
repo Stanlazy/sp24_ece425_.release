@@ -6,7 +6,7 @@
 
 Your design should be in a new virtuoso library: `ece425mp2_<netid>`. For example, `ece425mp2_zaizhou3`.
 
-You will design the datapath of a bit-sliced RISC-V32I compliant single-cycle processor
+You will design the schematic and layout of the datapath of a bit-sliced RISC-V32I compliant single-cycle processor
 (with the exception of `FENCE*`, `ECALL`, `EBREAK`, and `CSRR*` instructions).
 
 The entire design is provided to you in SystemVerilog. Use it as a reference.

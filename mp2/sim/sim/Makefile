@@ -11,6 +11,8 @@ VCS_FLAGS= -full64 -lca -sverilog +lint=all,noNS -timescale=1ns/1ns -debug_acc+a
 
 sim/top_tb: $(SRCS)
 	mkdir -p sim
+	sed -i -E 's/cds_globals.vss_/1'"'"'b0/g' $(NET_SRC)
+	sed -i -E 's/cds_globals.vdd_/1'"'"'b1/g' $(NET_SRC)
 	cd sim && vcs $(SRCS) $(VCS_FLAGS) -msg_config=../vcs_warn.config -l top_tb_compile.log -top top_tb -o top_tb
 
 .PHONY: run_top_tb
