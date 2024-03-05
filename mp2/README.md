@@ -40,10 +40,13 @@ and `<ece425_folder>/lvs/datapath.lvs.report`.
 Include clear and detailed screenshots of all your schematics,
 and include the extracted Verilog from your schematic.
 
-Include the controller Verilog file, whether you have modified it or not.
+Include the `sim/hdl` folder, whether you have modified it or not.
 
 Include clear and detailed screenshots of the layout of every cell in your design.
 Include two rulers in the screenshot in the datapath that bounds your entire design for us to see your area.
+
+Simulate your design with the the provided testcode on your extracted netlist.
+Include a screenshot of the waveform window in verdi showing all the register values.
 
 Submit a zip file to canvas with the following structure:
 
@@ -63,9 +66,12 @@ submission.zip
 │   ├── datapath.png
 │   ├── bitslice.png
 │   └── ...
-├── controller.sv
+├── hdl
+│   ├── control.sv
+│   └── cpu.sv
 ├── datapath.drc.summary
 ├── datapath.lvs.report
+├── verdi.png
 ├── ece425mp1_<netid>.tar
 └── ece425mp2_<netid>.tar
 ```

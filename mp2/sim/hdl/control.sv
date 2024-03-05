@@ -181,7 +181,7 @@ import rv32i_types::*;
         rd_s                            = (opcode inside {op_lui, op_auipc, op_jal, op_jalr, op_load, op_imm, op_reg}) ? imem_rdata[11: 7] : 5'd0;
         rs1_s_onehot                    = 32'd1 << rs1_s;
         rs2_s_onehot                    = 32'd1 << rs2_s;
-        rd_s_onehot                     = (32'd1 << rd_s) & ~clk;
+        rd_s_onehot                     = (32'd1 << rd_s) & {32{~clk}};
 
         dmem_read                       = 1'b0;
         dmem_rmask                      = 4'd0;
@@ -189,7 +189,7 @@ import rv32i_types::*;
         dmem_wmask                      = 4'd0;
         rs1_sel                         = 32'd1;
         rs2_sel                         = 32'd1;
-        rd_sel                          = 32'd1;
+        rd_sel                          = 32'd1 & {32{~clk}};
         alu_mux_1_sel                   = 'x;
         alu_mux_2_sel                   = 'x;
         alu_inv_rs2                     = 1'b0;

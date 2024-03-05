@@ -189,7 +189,7 @@ import rv32i_types::*;
         dmem_wmask                      = 4'd0;
         rs1_sel                         = 32'd1;
         rs2_sel                         = 32'd1;
-        rd_sel                          = 32'd1;
+        rd_sel                          = 32'd1 & {32{~clk}};
         alu_mux_1_sel                   = 'x;
         alu_mux_2_sel                   = 'x;
         alu_inv_rs2                     = 1'b0;
